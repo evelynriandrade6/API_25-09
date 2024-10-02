@@ -21,9 +21,9 @@ module.exports = class orgController {
       return res.status(400).json({ error: "Email inválido. Deve conter @!" });
     }
 
-    const existingOrg = organizadores.find((Org) => Org.telefone === telefone);
+    const existingOrg = organizadores.find((Org) => Org.email === email);
     if (existingOrg) {
-      return res.status(400).json({ error: "Telefone já cadastrado!" });
+      return res.status(400).json({ error: "Email já cadastrado!" });
     }
 
     id = id + 1;
